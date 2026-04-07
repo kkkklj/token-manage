@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 300px; padding: 16px; font-family: Arial, sans-serif; }
+    h3 { margin: 0 0 12px; }
+    label { display: block; margin-bottom: 8px; font-size: 12px; }
+    input { width: 100%; padding: 8px; margin-bottom: 12px; box-sizing: border-box; }
+    button { padding: 8px 16px; margin-right: 8px; cursor: pointer; }
+    .btn-read { background: #4CAF50; color: white; border: none; }
+    .btn-copy { background: #9C27B0; color: white; border: none; }
+  </style>
+</head>
+<body>
+  <h3>Admin Token Manager</h3>
+  <label>Token Value:</label>
+  <input type="text" id="tokenInput" placeholder="Enter token value">
+  <div>
+    <button class="btn-read" id="readBtn">Read</button>
+    <button class="btn-copy" id="copyBtn">Copy</button>
+    <button class="btn-write" id="writeBtn">Write</button>
+  </div>
+  <div id="result"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

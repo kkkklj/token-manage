@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Admin Token Manager",
+  "version": "1.0",
+  "description": "Read and write admin_token in localStorage",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+    }
+  }
+}
