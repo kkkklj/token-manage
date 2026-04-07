@@ -1,4 +1,4 @@
-document.getElementById('readBtn').addEventListener('click', async () => {
+document.getElementById('readCopyBtn').addEventListener('click', async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const result = await chrome.scripting.executeScript({
     target: { tabId: tab.id },
@@ -6,16 +6,11 @@ document.getElementById('readBtn').addEventListener('click', async () => {
   });
   const token = result[0].result;
   document.getElementById('tokenInput').value = token || '';
-  document.getElementById('result').textContent = token ? `Read: ${token}` : 'No admin_token found';
-});
-
-document.getElementById('copyBtn').addEventListener('click', async () => {
-  const token = document.getElementById('tokenInput').value;
   if (token) {
     await navigator.clipboard.writeText(token);
-    document.getElementById('result').textContent = `Copied: ${token}`;
+    document.getElementById('result').textContent = `Read & Copied: ${token}`;
   } else {
-    document.getElementById('result').textContent = 'No token to copy';
+    document.getElementById('result').textContent = 'No admin_token found';
   }
 });
 
